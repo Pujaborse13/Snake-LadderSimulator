@@ -44,5 +44,4 @@ public class SnakeAndLadder {
         System.out.println("Congratulations! Player reached the winning position: " + WINNING_POSITION);
     }
 
-
 }
