@@ -5,11 +5,13 @@ public class SnakeAndLadder {
         System.out.println("Welcome to the Snake and Ladder Game!");
 
         int playerPosition = 0;
+        int diceRollCount = 0;
         final int WINNING_POSITION = 100;
         Random random = new Random();
 
         while (playerPosition < WINNING_POSITION) {
             int dieRoll = random.nextInt(6) + 1;
+            diceRollCount++;
             System.out.println("Player rolls the die and gets: " + dieRoll);
 
             int option = random.nextInt(3);
@@ -45,6 +47,7 @@ public class SnakeAndLadder {
         }
 
         System.out.println("Congratulations! Player reached the winning position: " + WINNING_POSITION);
+        System.out.println("Total number of dice rolls to win the game: " + diceRollCount);
     }
 
 }
