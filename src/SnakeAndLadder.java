@@ -20,22 +20,25 @@ public class SnakeAndLadder {
 
                 case 1: // Ladder
                     System.out.println("Option: Ladder! Player moves ahead by " + dieRoll + " positions.");
-                    playerPosition += dieRoll;
+                    if (playerPosition + dieRoll <= WINNING_POSITION) {
+                        playerPosition += dieRoll;
+                    } else {
+                        System.out.println("Roll exceeds 100. Player stays at position " + playerPosition);
+                    }
                     break;
+
 
                 case 2: // Snake
                     System.out.println("Option: Snake! Player moves behind by " + dieRoll + " positions.");
                     playerPosition -= dieRoll;
-                    break;
-            }
-            if (playerPosition < 0) {
-                playerPosition = 0;
-                System.out.println("Player moves below 0 and restarts from 0.");
-            }
-            if (playerPosition > WINNING_POSITION) {
-                playerPosition -= dieRoll;
-                System.out.println("Player cannot move beyond position 100.");
-            }
+                    if (playerPosition < 0) {
+                        playerPosition = 0;
+                        System.out.println("Player moves below 0 and restarts from 0.");
+                    }
+
+            break;
+        }
+
 
             System.out.println("Player's current position: " + playerPosition);
             System.out.println("-------------------------------------------------");
